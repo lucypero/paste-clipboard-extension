@@ -1,0 +1,21 @@
+  {
+    "name": "copy clipboad",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "manifest_version": 2,
+    "background": {
+      "persistent": false,
+      "page": "background.html"
+    },
+    "content_scripts": [{
+	     "matches": ["file:///D:/Lucy/Japanese/notepad.html"],
+	     "js": ["contentScript.js"]
+	   }],
+    "permissions" : [
+	    "clipboardWrite",
+	    "clipboardRead",
+	    "declarativeContent",
+	    "activeTab",
+	    "tabs"
+	  ]
+  }
