@@ -1,17 +1,3 @@
-//get what is being copied
-// send it to your js scipt that runs on your notepad
-// paste it on the notepad
-// profit
-
-//all that is left is to send this to a content script and paste it on your notepad
-/*
-chrome.runtime.onInstalled.addListener(function() {
-chrome.tabs.create({url: chrome.extension.getURL('background.html')});
-});
-*/
-
-//port = chrome.runtime.connect(null, {name: 'hi'});
-
 var last_one = ""
 
 function getContentFromClipboard(port) {
@@ -26,7 +12,6 @@ function getContentFromClipboard(port) {
         }
         last_one = result
         port.postMessage(result)
-        console.log('got value from sandbox: ' + result);
     }
     sandbox.value = '';
     return result;

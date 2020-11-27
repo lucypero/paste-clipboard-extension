@@ -1,7 +1,7 @@
   {
-    "name": "copy clipboad",
+    "name": "copy clipboard",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "It copies what's on the clipboard to your online notepad automatically",
     "manifest_version": 2,
     "background": {
       "persistent": false,
