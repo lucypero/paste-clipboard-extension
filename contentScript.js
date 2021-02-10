@@ -5,10 +5,11 @@ var port = chrome.runtime.connect({name: "knockknock"});
 // 
 function new_way(msg) {
 
-	let max_character_count = 2000
+	let max_character_count = 500
 
   var ta = document.getElementById("ta");
-	ta.innerHTML += '<br><br>' + msg
+	let new_msg = msg.replace(/\n/g, '<br>')
+	ta.innerHTML += '<br><br>' + new_msg
 	if(ta.innerText.length > max_character_count) {
 		let difference = ta.innerText.length - max_character_count
 		ta.innerText = ta.innerText.slice(difference)
