@@ -8,7 +8,7 @@
       "page": "background.html"
     },
     "content_scripts": [{
-	     "matches": ["file:///D:/Lucy/Japanese/notepad.html"],
+	     "matches": ["file:///D:/Lucy/Japanese/notepad.html", "file:///mnt/Anime/Lucy/Japanese/notepad.html"],
 	     "js": ["contentScript.js"]
 	   }],
     "permissions" : [
