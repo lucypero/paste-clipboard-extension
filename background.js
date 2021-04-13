@@ -1,3 +1,5 @@
+var interval;
+
 var last_one = ""
 
 function getContentFromClipboard(port) {
@@ -8,17 +10,21 @@ function getContentFromClipboard(port) {
     if (document.execCommand('paste')) {
         result = sandbox.value;
         if( result == last_one) {
-        	return 0
+            return 0
         }
         last_one = result
-        port.postMessage(result)
+        if (port) { port.postMessage(result) }
     }
     sandbox.value = '';
     return result;
 }
 
 chrome.runtime.onConnect.addListener(function(port) {
-	setInterval(function() {
-	  getContentFromClipboard(port)
-	},50)
+    port.onDisconnect.addListener(function(port) {
+        clearInterval(interval)
+    })
+    clearInterval(interval)
+    interval = setInterval(function() {
+        getContentFromClipboard(port)
+    },50)
 });

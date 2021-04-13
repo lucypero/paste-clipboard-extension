@@ -5,7 +5,7 @@ var port = chrome.runtime.connect({name: "knockknock"});
 // 
 function new_way(msg) {
 
-	let max_character_count = 500
+	let max_character_count = 2000
 
   var ta = document.getElementById("ta");
 	let new_msg = msg.replace(/\n/g, '<br>')
